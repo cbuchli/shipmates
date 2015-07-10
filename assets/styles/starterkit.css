@@ -1,0 +1,332 @@
+html,body{
+  text-align:left;font-size:1em
+}
+html,body,img,form,textarea,input,fieldset,div,p,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code{
+  margin:0;padding:0
+}
+ul,li{
+  list-style:none
+}
+img{
+  display:block
+}
+a img{
+  border:0
+}
+a{
+  text-decoration:none;font-weight:normal;font-family:inherit
+}
+*:active,*:focus{
+  outline:0;-moz-outline-style:none
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight:normal
+}
+div.clear{
+  clear:both
+}
+.clearfix:after{
+  clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden
+}
+body{
+  font-family:"Open Sans",Arial,sans-serif;font-weight:300;
+}
+.top-bar {
+  width: 100%; background-color: #e4f0f1; padding: 15px 0;
+}
+.top-bar .container img {
+  float: left;
+}
+.top-bar .container ul {
+  float: right; padding-top: 25px;
+}
+.top-bar .container li {
+  float: left; width: 125px; text-align: center; font-size: 15px; color:#000; font-weight: 600;
+}
+.top-bar .container a li:hover {
+  color: #118798; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;
+}
+.container{
+  width: 80%; max-width: 1200px; margin: auto;
+}
+div.header {
+  -webkit-transition: 6s; -moz-transition: 6s; -o-transition: 6s;transition: 6s; background: rgba(4, 36, 41, 0.89) url(/images/img_sailsShadow.png) no-repeat 42% bottom; padding: 100px 0 65px;
+}
+.header h1#main-title{
+  color: #fff; font-weight: 300; font-size: 2.5em;
+}
+.header h3{
+  color: #b1eef7; font-style: italic; font-weight: 300;
+}
+.header h3 code{
+  font-style: normal!important; background-color: rgba(255,255,255,0.5); font-weight: 300; color:#0e6471; margin: 0px 5px;
+}
+div.main.container{
+  padding: 50px 0;
+}
+h1 {
+  color: #118798; font-weight: 300;
+}
+code {
+  font-size: inherit; font-family: 'Consolas', 'Monaco', monospace; padding:4px 5px 1px; background-color: #f3f5f7
+}
+a{
+  color: #118798; font-weight: 300; text-decoration: underline;
+}
+a:hover {
+  color: #0e6471; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;
+}
+p{
+  line-height: 1.5em;
+}
+blockquote{
+  background-color: #e4f0f1; padding: 25px; line-height: 1.5em; margin: 15px 0;
+}
+blockquote span{
+  font-weight: 600; padding-right: 5px;
+}
+div.getting-started{
+  padding: 25px 75px 25px 0; width: 70%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+div.getting-started li{
+  padding: 25px 0;
+}
+div.getting-started li h3 {
+  padding-bottom: 10px; font-size: 25px; font-weight: 300;
+}
+.sprite{
+  background:url(http://sailsjs.org/images/newapp.sprite.png) no-repeat; position: absolute; left: 0; top:0;
+}
+.getting-started .sprite{
+  margin-left:10px;padding-left:60px;height:42px;width:0; float: left;
+}
+.getting-started .one{
+  background-position:0 0
+}
+.getting-started .two{
+  background-position:0 -42px
+}
+.getting-started .three{
+  background-position:0 -83px
+}
+div.step {
+  position: relative; padding-left: 70px; opacity: 0.9;
+}
+div.step:hover{
+  opacity: 1;
+}
+div.links {
+  float: left; width: 30%; max-width: 325px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f3f5f7; border: 1px solid #ebebeb; padding: 25px 45px 35px;
+}
+div.links h3 {
+  color: #727272; text-align: center; font-size: 28px; font-weight: 300;
+}
+div.links h4 {
+  color: #727272; font-size: 17px; font-weight: 600; padding: 15px 0 10px;
+}
+div.links .link-list a {
+  text-decoration: none; font-weight: 400;
+}
+div.links .link-list a li {
+  padding: 0px 0px 5px 10px;
+}
+div.default-page{
+  min-width: 1200px;
+}
+.pocket{
+  display:none;
+}
+
+
+body {
+  background: #fafafa;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+
+
+/* Application theme */
+
+:root {
+  --dark-primary-color: #303F9F;
+  --default-primary-color: #3F51B5;
+  --light-primary-color: #C5CAE9;
+  --text-primary-color: #ffffff; /*text/icons*/
+  --accent-color: #FF4081;
+  --primary-background-color: #c5cae9;
+  --primary-text-color: #212121;
+  --secondary-text-color: #727272;
+  --disabled-text-color: #bdbdbd;
+  --divider-color: #B6B6B6;
+
+  /* Components */
+
+  /* paper-drawer-panel */
+  --drawer-menu-color: #ffffff;
+  --drawer-border-color: 1px solid #ccc;
+  --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
+
+  /* paper-menu */
+  --paper-menu-background-color: #fff;
+  --menu-link-color: #111111;
+}
+
+/* General styles */
+
+#drawerToolbar {
+  color: var(--secondary-text-color);
+  background-color: var(--drawer-menu-color);
+  border-bottom: var(--drawer-toolbar-border-color);
+  height: 64px;
+}
+
+paper-material {
+  border-radius: 2px;
+  height: 100%;
+  padding: 16px 0 16px 0;
+  width: calc(98.66% - 16px);
+  margin: 16px auto;
+  background: white;
+}
+
+paper-menu iron-icon {
+  margin-right: 33px;
+  opacity: 0.54;
+}
+
+.paper-menu > .iron-selected {
+  color: var(--default-primary-color);
+}
+
+paper-menu a {
+  text-decoration: none;
+  color: var(--menu-link-color);
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  min-height: 48px;
+  padding: 0 16px;
+}
+
+#mainToolbar .middle {
+  margin-left: 48px;
+}
+
+#mainToolbar.has-shadow .middle {
+  font-size: 20px;
+  padding-bottom: 0;
+  margin-left: 48px;
+}
+
+/* Height of the scroll area */
+#mainContainer > .content {
+  height: 900px;
+}
+
+/* Breakpoints */
+
+/* Small */
+@media (max-width: 600px) {
+
+  paper-material {
+    --menu-container-display: none;
+    width: calc(97.33% - 32px);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .paper-font-display1 {
+    font-size: 12px;
+  }
+
+  .app-name {
+    font-size: 26px;
+  }
+
+  #drawer .paper-toolbar {
+    margin-left: 16px;
+  }
+
+  #overlay {
+    min-width: 360px;
+  }
+
+  .bg {
+    background: white;
+  }
+
+}
+
+/* Tablet+ */
+@media (min-width: 601px) and (max-width: 606px) {
+  paper-material {
+    width: calc(98% - 46px);
+    margin-bottom: 32px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  #drawer.paper-drawer-panel > [drawer] {
+    border-right: 1px solid rgba(0, 0, 0, 0.14);
+  }
+
+  iron-pages {
+    padding: 48px 62px;
+  }
+
+}
+
+/* Material Design Adaptive Breakpoints */
+/*
+  Below you'll find CSS media queries based on the breakpoint guidance
+  published by the Material Design team. You can choose to use, customise
+  or remove these breakpoints based on your needs.
+
+  http://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints
+ */
+
+/* mobile-small */
+@media all and (min-width: 0) and (max-width: 360px) and (orientation: portrait) { }
+/* mobile-large */
+@media all and (min-width: 361px) and (orientation: portrait) { }
+/* mobile-small-landscape */
+@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }
+/* mobile-large-landscape */
+@media all and (min-width: 481px) and (orientation: landscape) { }
+/* tablet-small-landscape */
+@media all and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) { }
+/* tablet-large-landscape */
+@media all and (min-width: 961px) and (orientation: landscape) { }
+/* tablet-small */
+@media all and (min-width: 600px) and (orientation: portrait) { }
+/* tablet-large */
+@media all and (min-width: 601px) and (max-width: 840px) and (orientation : portrait) { }
+/* desktop-x-small-landscape */
+@media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }
+/* desktop-x-small */
+@media all and (min-width: 0) and (max-width: 480px) and (max-aspect-ratio: 4/3) { }
+/* desktop-small-landscape */
+@media all and (min-width: 481px) and (max-width: 840px) and (orientation: landscape) { }
+/* desktop-small */
+@media all and (min-width: 481px) and (max-width: 840px) and (max-aspect-ratio: 4/3) { }
+/* desktop-medium-landscape */
+@media all and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) { }
+/* desktop-medium */
+@media all and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4/3) { }
+/* desktop-large */
+@media all and (min-width: 1281px) and (max-width: 1600px) { }
+/* desktop-xlarge */
+@media all and (min-width: 1601px) and (max-width: 1920px) { }

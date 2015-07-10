@@ -1,0 +1,151 @@
+<script type="text/javascript">
+setTimeout(function sunrise () {
+    document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
+}, 0);
+</script>
+
+<div class="default-page" ng-app="shipmates" id="app">
+    <div class="header">
+        <h1 id="main-title" class="container"><%= __('A brandd new app.') %></h1>
+        <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+    </div>
+    <div class="main container clearfix" ng-controller="shipmatesController">
+      <div class="getting-started">
+        <vessel-list vessels="{{vessels}}"></vessel-list>
+        </div>
+
+        <div class="links">
+            <ul class="link-list">
+                <h4>Community</h4>
+                <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
+                <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
+                <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
+                <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--<div ng-controller="shipmatesController">-->
+
+
+
+
+<!--<span id="browser-sync-binding"></span>-->
+<!--<template is="dom-bind" id="app">-->
+
+  <!--<paper-drawer-panel id="paperDrawerPanel">-->
+    <!--<div drawer>-->
+
+      <!--&lt;!&ndash; Drawer Toolbar &ndash;&gt;-->
+      <!--<paper-toolbar id="drawerToolbar">-->
+        <!--<span class="paper-font-title">Menu</span>-->
+      <!--</paper-toolbar>-->
+
+      <!--&lt;!&ndash; Drawer Content &ndash;&gt;-->
+      <!--<paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">-->
+        <!--<a data-route="home" href="#">-->
+          <!--<iron-icon icon="home"></iron-icon>-->
+          <!--<span>Home</span>-->
+        <!--</a>-->
+
+        <!--<a data-route="users" href="#">-->
+          <!--<iron-icon icon="info"></iron-icon>-->
+          <!--<span>Users</span>-->
+        <!--</a>-->
+
+        <!--<a data-route="contact" href="#">-->
+          <!--<iron-icon icon="mail"></iron-icon>-->
+          <!--<span>Contact</span>-->
+        <!--</a>-->
+      <!--</paper-menu>-->
+    <!--</div>-->
+    <!--<paper-header-panel main mode="waterfall-tall">-->
+
+      <!--&lt;!&ndash; Main Toolbar &ndash;&gt;-->
+      <!--<paper-toolbar id="mainToolbar">-->
+        <!--<paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>-->
+        <!--<span class="flex"></span>-->
+
+        <!--&lt;!&ndash; Toolbar icons &ndash;&gt;-->
+        <!--<paper-icon-button icon="refresh"></paper-icon-button>-->
+        <!--<paper-icon-button icon="search"></paper-icon-button>-->
+
+        <!--&lt;!&ndash; Application name &ndash;&gt;-->
+        <!--<div class="middle paper-font-display2 app-name">Polymer Starter Kit</div>-->
+
+        <!--&lt;!&ndash; Application sub title &ndash;&gt;-->
+        <!--<div class="bottom title"></div>-->
+
+      <!--</paper-toolbar>-->
+
+      <!--&lt;!&ndash; Main Content &ndash;&gt;-->
+      <!--<div class="content">-->
+        <!--<iron-pages attr-for-selected="data-route" selected="{{route}}">-->
+
+          <!--<section data-route="home">-->
+            <!--<paper-material elevation="1" ng-controller="shipmatesController">-->
+              <!--<my-greeting></my-greeting>-->
+<!--{{vessels}}-->
+              <!--<p class="paper-font-subhead">You now have:</p>-->
+              <!--<vessel-list vessels="{{vessels}}"></vessel-list>-->
+
+              <!--<p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>-->
+            <!--</paper-material>-->
+            <!--<paper-material elevation="1">-->
+              <!--<p class="paper-font-body2">This is another card.</p>-->
+            <!--</paper-material>-->
+          <!--</section>-->
+
+          <!--<section data-route="users">-->
+            <!--<paper-material elevation="1">-->
+              <!--<h2 class="paper-font-display2">Users</h2>-->
+              <!--<p>This is the users section</p>-->
+
+              <!--<paper-menu class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">-->
+              <!--<a data-route="user-info" href="#">Rob</a>-->
+              <!--</paper-menu>-->
+            <!--</paper-material>-->
+          <!--</section>-->
+
+          <!--<section data-route="user-info">-->
+            <!--<paper-material elevation="1">-->
+              <!--<h2 class="paper-font-display2">-->
+                <!--User:<span>{{params.name}}</span>-->
+              <!--</h2>-->
+              <!--<div>This is <span>{{params.name}}</span>'s section</div>-->
+            <!--</paper-material>-->
+          <!--</section>-->
+
+          <!--<section data-route="contact">-->
+            <!--<paper-material elevation="1">-->
+              <!--<h2 class="paper-font-display2">Contact</h2>-->
+              <!--<p>This is the contact section</p>-->
+            <!--</paper-material>-->
+          <!--</section>-->
+
+        <!--</iron-pages>-->
+      <!--</div>-->
+    <!--</paper-header-panel>-->
+  <!--</paper-drawer-panel>-->
+
+  <!--<paper-toast id="caching-complete"-->
+               <!--duration="6000"-->
+               <!--text="Caching complete! This app will work offline.">-->
+  <!--</paper-toast>-->
+
+  <!--<platinum-sw-register auto-register-->
+                        <!--clients-claim-->
+                        <!--skip-waiting-->
+                        <!--on-service-worker-installed="displayInstalledToast">-->
+    <!--<platinum-sw-cache default-cache-strategy="networkFirst"-->
+                       <!--precache-file="precache.json">-->
+    <!--</platinum-sw-cache>-->
+  <!--</platinum-sw-register>-->
+
+<!--</template>-->
+<!--</div>-->

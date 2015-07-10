@@ -1,0 +1,33 @@
+<dom-module id="vessel-list">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <template is="dom-repeat" items="{{vessels}}" as="vessel">
+      <paper-material elevation="3">
+        <span class="paper-font-body1">{{vessel.name}}</span>
+        going:
+        <template is="dom-repeat" items="{{vessel.mates}}" as="mate">
+          <span>{{mate.name}}</span>
+        </template>
+      </paper-material>
+    </template>
+  </template>
+</dom-module>
+<script>
+  (function () {
+    Polymer({
+      is: 'vessel-list',
+      properties: {
+        vessels: {
+          type: Array,
+          notify: true
+        }
+      },
+      ready: function() {
+      }
+    });
+  })();
+</script>
