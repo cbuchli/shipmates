@@ -3,7 +3,7 @@
  */
 
 app.controller('shipmatesController', ['$scope', function($scope) {
-  $scope.vessels = $scope.vessels || [];
+  $scope.vessels = $scope.vessels || [{'mates': []}];
 
   if (!io.socket.alreadyListeningToVessels) {
     io.socket.on('connect', function() {
