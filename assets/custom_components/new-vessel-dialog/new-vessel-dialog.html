@@ -1,0 +1,55 @@
+<dom-module id="new-vessel-dialog">
+
+  <template>
+
+    <paper-dialog entry-animation="scale-up-animation"
+                  exit-animation="fade-out-animation" backdrop id="new-vessel-dialog">
+      <h2>New Event</h2>
+
+      <paper-dialog-scrollable>
+        <paper-input label="Event Title"></paper-input>
+        <paper-input label="Location"></paper-input>
+        <paper-input label="Your Short Name"></paper-input>
+        <paper-input label="Date"></paper-input>
+        <paper-input label="Registration end"></paper-input>
+        <paper-input label="Costs"></paper-input>
+        <paper-textarea label="Description"></paper-textarea>
+      </paper-dialog-scrollable>
+
+      <div class="buttons">
+        <paper-button dialog-dismiss>Cancel</paper-button>
+        <paper-button dialog-confirm>Submit</paper-button>
+      </div>
+    </paper-dialog>
+
+  </template>
+
+
+</dom-module>
+
+<script>
+  (function () {
+    Polymer({
+      is: 'new-vessel-dialog',
+      ready: function() {
+      }
+    });
+  })();
+  function clickHandler(e) {
+    var button = e.target;
+    while (!button.hasAttribute('data-dialog') && button !== document.body) {
+      button = button.parentElement;
+    }
+
+    if (!button.hasAttribute('data-dialog')) {
+      return;
+    }
+
+    var id = button.getAttribute('data-dialog');
+    var dialog = document.getElementById(id);
+    if (dialog) {
+      console.log(dialog);
+      dialog.toggle();
+    }
+  }
+</script>

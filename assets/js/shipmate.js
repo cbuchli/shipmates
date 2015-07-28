@@ -37,5 +37,4 @@
       drawerPanel.closeDrawer();
     }
   };
-
 })(document);

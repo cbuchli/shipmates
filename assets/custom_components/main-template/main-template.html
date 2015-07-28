@@ -1,0 +1,83 @@
+<dom-module id="main-template">
+  <style>
+    :host {
+      display: block;
+    }
+  </style>
+  <template>
+    <paper-drawer-panel id="paperDrawerPanel">
+      <div drawer>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu>
+          <a data-route="home" href="#">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+
+          <a href="#">
+            <iron-icon icon="info"></iron-icon>
+            <span>Users</span>
+          </a>
+
+          <a href="#">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Contact</span>
+          </a>
+        </paper-menu>
+      </div>
+      <paper-header-panel main mode="waterfall-tall">
+
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="flex"></span>
+
+          <!-- Toolbar icons -->
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+
+          <!-- Application name -->
+          <div class="middle paper-font-display2 app-name">Polymer Starter Kit</div>
+
+          <!-- Application sub title -->
+          <div class="bottom title"></div>
+
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+
+          <iron-pages selected="0">
+            <section onclick="clickHandler(event)">
+              <paper-icon-button icon="add" data-dialog="new-vessel-dialog"></paper-icon-button>
+              <vessel-list vessels="{{vessels}}"></vessel-list>
+            </section>
+          </iron-pages>
+        </div>
+      </paper-header-panel>
+    </paper-drawer-panel>
+  </template>
+</dom-module>
+
+
+<script>
+  (function () {
+    Polymer({
+      is: 'main-template',
+      properties: {
+        vessels: {
+          type: Array,
+          notify: true
+        }
+      },
+      ready: function() {
+      }
+    });
+  })();
+</script>
