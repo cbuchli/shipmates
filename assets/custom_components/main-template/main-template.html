@@ -14,20 +14,15 @@
         </paper-toolbar>
 
         <!-- Drawer Content -->
-        <paper-menu>
-          <a data-route="home" href="#">
+        <paper-menu attr-for-selected="data-route" selected="{{route}}">
+          <a data-route="list" href="" onclick="onMenuSelect();">
             <iron-icon icon="home"></iron-icon>
-            <span>Home</span>
+            <span>List Events</span>
           </a>
 
-          <a href="#">
+          <a data-route="new" href=""onclick="onMenuSelect();">
             <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
-          </a>
-
-          <a href="#">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
+            <span>New Vessel</span>
           </a>
         </paper-menu>
       </div>
@@ -38,25 +33,25 @@
           <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
           <span class="flex"></span>
 
-          <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
-
           <!-- Application name -->
-          <div class="middle paper-font-display2 app-name">Polymer Starter Kit</div>
+          <div class="middle paper-font-display2 app-name">Where My Shipmates at?</div>
 
           <!-- Application sub title -->
-          <div class="bottom title"></div>
+          <div class="bottom bottom-container center horizontal layout">
+            <div class="bottom-title paper-font-subhead">Simple App to manage Event-participants.</div>
+          </div>
 
         </paper-toolbar>
 
         <!-- Main Content -->
         <div class="content">
 
-          <iron-pages selected="0">
-            <section onclick="clickHandler(event)">
-              <paper-icon-button icon="add" data-dialog="new-vessel-dialog"></paper-icon-button>
+          <iron-pages is="pages" attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="list">
               <vessel-list vessels="{{vessels}}"></vessel-list>
+            </section>
+            <section data-route="new">
+              <new-vessel-dialog><!-- --></new-vessel-dialog>
             </section>
           </iron-pages>
         </div>

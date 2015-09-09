@@ -1,26 +1,2 @@
-<!--<script type="text/javascript">-->
-<!--setTimeout(function sunrise () {-->
-    <!--document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';-->
-<!--}, 0);-->
-<!--</script>-->
-<paper-dialog entry-animation="scale-up-animation"
-              exit-animation="fade-out-animation" backdrop id="new-vessel-dialog">
-  <h2>New Event</h2>
-
-  <paper-dialog-scrollable>
-    <paper-input label="Event Title"></paper-input>
-    <paper-input label="Location"></paper-input>
-    <paper-input label="Your Short Name"></paper-input>
-    <paper-input label="Date"></paper-input>
-    <paper-input label="Registration end"></paper-input>
-    <paper-input label="Costs"></paper-input>
-    <paper-textarea label="Description"></paper-textarea>
-  </paper-dialog-scrollable>
-
-  <div class="buttons">
-    <paper-button dialog-dismiss>Cancel</paper-button>
-    <paper-button dialog-confirm>Submit</paper-button>
-  </div>
-</paper-dialog>
 
 <main-template vessels="{{vessels}}"></main-template>
