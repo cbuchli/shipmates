@@ -9,9 +9,6 @@ module.exports = {
 
   attributes: {
     name:'STRING',
-    captain: {
-      model: 'captain'
-    },
     mates: {
       collection: 'mate',
       via: 'sailing'

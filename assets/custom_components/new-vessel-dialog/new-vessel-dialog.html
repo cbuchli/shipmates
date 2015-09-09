@@ -2,25 +2,44 @@
 
   <template>
 
-    <paper-dialog entry-animation="scale-up-animation"
-                  exit-animation="fade-out-animation" backdrop id="new-vessel-dialog">
+    <paper-material elevation="5" animated="1">
       <h2>New Event</h2>
 
-      <paper-dialog-scrollable>
-        <paper-input label="Event Title"></paper-input>
-        <paper-input label="Location"></paper-input>
-        <paper-input label="Your Short Name"></paper-input>
-        <paper-input label="Date"></paper-input>
-        <paper-input label="Registration end"></paper-input>
-        <paper-input label="Costs"></paper-input>
-        <paper-textarea label="Description"></paper-textarea>
-      </paper-dialog-scrollable>
+      <form is="iron-form" method="post" action="/vessel/create" id="newVesselForm">
+        <paper-material elevation="3" animated="1">
+          <paper-input label="Event Title" name="name" required="true"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-input label="Location" name="location"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-input label="Your Short Name" name="captain"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-input label="Date" name="date"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-input label="URL" name="url"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-input label="Registration end" name="registertill"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-input label="Costs" name="costs"></paper-input>
+        </paper-material>
+        <paper-material elevation="3" animated="1">
+          <paper-textarea label="Description" value="Describe your Event." name="description"></paper-textarea>
+        </paper-material>
 
-      <div class="buttons">
-        <paper-button dialog-dismiss>Cancel</paper-button>
-        <paper-button dialog-confirm>Submit</paper-button>
-      </div>
-    </paper-dialog>
+
+        <div class="buttons">
+          <paper-button onclick="setActivePage('',true)">Cancel</paper-button>
+          <paper-button type="submit" raised on-click="submitForm">Submit</paper-button>
+        </div>
+
+        <iron-ajax id="ajaxForm" method="POST" url="/vessel/create" response="{{response}}"></iron-ajax>
+      </form>
+    </paper-material>
 
   </template>
 
@@ -32,24 +51,13 @@
     Polymer({
       is: 'new-vessel-dialog',
       ready: function() {
+      },
+      submitForm: function() {
+        var form = document.getElementById('newVesselForm');
+        var ajax = document.getElementById('ajaxForm');
+        ajax.body = new FormData(form);
+        ajax.generateRequest();
       }
     });
   })();
-  function clickHandler(e) {
-    var button = e.target;
-    while (!button.hasAttribute('data-dialog') && button !== document.body) {
-      button = button.parentElement;
-    }
-
-    if (!button.hasAttribute('data-dialog')) {
-      return;
-    }
-
-    var id = button.getAttribute('data-dialog');
-    var dialog = document.getElementById(id);
-    if (dialog) {
-      console.log(dialog);
-      dialog.toggle();
-    }
-  }
 </script>

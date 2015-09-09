@@ -1,0 +1,18 @@
+#mainToolbar .bottom-title {
+  display: none;
+}
+#mainToolbar.tall .bottom-title {
+  display: inherit;
+}
+
+new-vessel-dialog paper-material.new-vessel-dialog {
+  padding: 16px;
+  width: calc(98.66% - 4* 16px); /* 2x padding + 2x margin */
+}
+new-vessel-dialog paper-material.new-vessel-dialog paper-material {
+  padding: 0;
+}
+
+new-vessel-dialog paper-material.new-vessel-dialog paper-input-container {
+  padding-bottom: 0;
+}

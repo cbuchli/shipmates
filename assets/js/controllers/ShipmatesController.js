@@ -50,4 +50,10 @@ app.controller('shipmatesController', ['$scope', function($scope) {
       }
     });
   }
+
+  //$scope.submitNewVessel = function() {
+  //  if ($scope.newVesselForm.$valid) {
+  //    alert('asdf');
+  //  }
+  //}
 }]);
