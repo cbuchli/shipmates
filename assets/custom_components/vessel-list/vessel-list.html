@@ -7,11 +7,18 @@
   <template>
       <template is="dom-repeat" items="{{vessels}}" as="vessel">
         <paper-material elevation="3" animated="1">
-          <span class="paper-font-body1">{{vessel.name}}</span>
-          going:
-          <template is="dom-repeat" items="{{vessel.mates}}" as="mate">
-            <span>{{mate.name}}</span>
-          </template>
+          Event: <span class="paper-font-body1">{{vessel.name}}</span><br />
+          Organisator: <span class="paper-font-body1">{{vessel.captain}}</span><br />
+          Location: <span class="paper-font-body1">{{vessel.location}}</span><br />
+          Costs: <span class="paper-font-body1">{{vessel.costs}}</span><br />
+          Date: <span class="paper-font-body1">{{vessel.date}}</span><br />
+          Interested:
+            <template is="dom-repeat" items="{{vessel.mates}}" as="mate">
+              <span>{{mate.name}}</span>
+          </template><br />
+
+          <vessel-list-form-join vessel="{{vessel}}" />
+
         </paper-material>
       </template>
   </template>
@@ -29,6 +36,7 @@
         }
       },
       ready: function() {
+
       }
     });
   })();

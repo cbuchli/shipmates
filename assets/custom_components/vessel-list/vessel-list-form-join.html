@@ -1,0 +1,54 @@
+<dom-module id="vessel-list-form-join">
+  <template>
+    Join:
+    <form is="iron-form" method="post" action="" id="{{formId}}">
+      <paper-material elevation="3" animated="1">
+        <paper-input label="your shortname" name="name"></paper-input>
+        <div class="buttons">
+          <paper-button type="submit" raised on-click="submitForm">Join</paper-button>
+        </div>
+
+        <iron-ajax id="{{ajaxId}}" method="POST" response="{{response}}"></iron-ajax>
+
+      </paper-material>
+    </form>
+  </template>
+</dom-module>
+
+
+<script>
+  (function () {
+    Polymer({
+      is: 'vessel-list-form-join',
+      properties: {
+        vessel: {
+          type: Array,
+          notify: true
+        },
+        formId: {
+          type: String,
+          computed: 'computeFormId(vessel.id)'
+        },
+        ajaxId: {
+          type: String,
+          computed: 'computeAjaxId(vessel.id)'
+        }
+      },
+      ready: function() {
+      },
+      computeFormId: function(vesselId) {
+        return 'form' + vesselId;
+      },
+      computeAjaxId: function(vesselId) {
+        return 'ajax' + vesselId;
+      },
+      submitForm: function() {
+        var form = document.getElementById(this.formId);
+        var ajax = document.getElementById(this.ajaxId);
+        ajax.url = '/vessel/'+ this.vessel.id +'/mates/add';
+        ajax.body = new FormData(form);
+        ajax.generateRequest();
+      }
+    });
+  })();
+</script>
